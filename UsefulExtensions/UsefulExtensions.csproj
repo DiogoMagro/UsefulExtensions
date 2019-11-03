@@ -2,6 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.1.0</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/DiogoMagro/UsefulExtensions</RepositoryUrl>
+    <RepositoryType />
+    <PackageReleaseNotes>Added summary to all extensions functions.
+Added new IntExtensions functions:
+-IsBetween.
+Added new StringExtensions functions:
+-ToInt;
+-GetBetween;
+-Trim:
+-ReplaceFrist;
+-ReplaceLast.</PackageReleaseNotes>
   </PropertyGroup>
 
 </Project>
