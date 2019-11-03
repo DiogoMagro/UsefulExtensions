@@ -15,6 +15,11 @@ Added new StringExtensions functions:
 -Trim:
 -ReplaceFrist;
 -ReplaceLast.</PackageReleaseNotes>
+    <PackageId>Dev.Useful.Extensions</PackageId>
+    <Authors>JDiogoMagro</Authors>
+    <Company />
+    <PackageTags>c#;.NET;Standard;DotNet;Extensions;UsefulExtensions;DevUsefulExtensions;Dev;Useful;</PackageTags>
+    <Description>UsefulExtensions it's an open source .NET Standard library that contains useful extensions to help developers coding fast and clean.</Description>
   </PropertyGroup>
 
 </Project>
