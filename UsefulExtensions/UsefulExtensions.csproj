@@ -2,19 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/DiogoMagro/UsefulExtensions</RepositoryUrl>
     <RepositoryType />
-    <PackageReleaseNotes>Added summary to all extensions functions.
-Added new IntExtensions functions:
--IsBetween.
-Added new StringExtensions functions:
--ToInt;
--GetBetween;
--Trim:
--ReplaceFrist;
--ReplaceLast.</PackageReleaseNotes>
+    <PackageReleaseNotes>-Added new String extensions like RemoveDiacritics, RemoveFirst, HasNumber and more.
+-Added IConvertibleExtensions file with a Convert extension that can be use in all IConvertible types.
+-Added DateTimeExtensions file with some util extensions like ToReadableTime, IsBetween, IsWorkDay, IsWeekend and more. Also overload some default DateTime extensions that not exists in Nullable DateTime like AddDays, AddHours, AddMinutes, etc.</PackageReleaseNotes>
     <PackageId>Dev.Useful.Extensions</PackageId>
     <Authors>JDiogoMagro</Authors>
     <Company />

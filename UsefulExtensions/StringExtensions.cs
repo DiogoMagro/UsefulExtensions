@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Globalization;
+using System.Linq;
+using System.Text;
 
 namespace UsefulExtensions
 {
@@ -154,6 +157,71 @@ namespace UsefulExtensions
                 return value;
 
             return value.Remove(place, search.Length).Insert(place, replace);
+        }
+
+        /// <summary>
+        /// Returns a new string in which the first occurrence of a specified 'strToRemove' string is removed.
+        /// </summary>
+        /// <param name="value">This string instace.</param>
+        /// <param name="strToRemove">The string to remove.</param>
+        /// <returns></returns>
+        public static string RemoveFirst(this string value, string strToRemove)
+        {
+            int pos = value.IndexOf(strToRemove);
+
+            if (pos < 0)
+                return value;
+
+            return value.Substring(0, pos) + value.Substring(pos + strToRemove.Length);
+        }
+
+        /// <summary>
+        /// Returns a new string in which the last occurrence of a specified 'strToRemove' string is removed.
+        /// </summary>
+        /// <param name="value">This string instace.</param>
+        /// <param name="strToRemove">The string to remove.</param>
+        /// <returns></returns>
+        public static string RemoveLast(this string value, string strToRemove)
+        {
+            int place = value.LastIndexOf(strToRemove);
+
+            if (place == -1)
+                return value;
+
+            return value.Remove(place, strToRemove.Length);
+        }
+
+        /// <summary>
+        /// Indicates if this string instance containes any number.
+        /// </summary>
+        /// <param name="value">This string instance.</param>
+        /// <returns></returns>
+        public static bool HasNumber(this string value)
+        {
+            return !value.IsNullOrWhiteSpace() && value.Any(x => Char.IsDigit(x));
+        }
+
+        /// <summary>
+        /// Returns a copy of the this string without diacritics.
+        /// </summary>
+        /// <param name="value">This string instance.</param>
+        /// <returns></returns>
+        static string RemoveDiacritics(this string value)
+        {
+            return  string.Concat(value.Normalize(NormalizationForm.FormD).Where(ch => CharUnicodeInfo.GetUnicodeCategory(ch) != UnicodeCategory.NonSpacingMark))
+                            .Normalize(NormalizationForm.FormC);
+        }
+
+        /// <summary>
+        /// Splits this string into substrings. You can specify whether the substrings include empty array elements.
+        /// </summary>
+        /// <param name="value">This string instance.</param>
+        /// <param name="separator">The string to use as separator.</param>
+        /// <param name="options">The options to split.</param>
+        /// <returns></returns>
+        static string[] Split(this string value, string separator, StringSplitOptions options = StringSplitOptions.None)
+        {
+            return value.Split(new string[] { separator }, options);
         }
     }
 }
