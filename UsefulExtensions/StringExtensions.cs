@@ -91,16 +91,15 @@ namespace UsefulExtensions
         }
 
         /// <summary>
-        /// Returns the string between the specified indexStart and indexEnd.
+        /// Returns the string between the specified startIndex and endIndex.
         /// </summary>
         /// <param name="value">This string instance.</param>
-        /// <param name="indexStart">The start index.</param>
-        /// <param name="indexEnd">The end index.</param>
+        /// <param name="startIndex">The start index.</param>
+        /// <param name="endIndex">The end index.</param>
         /// <returns></returns>
-        public static string GetBetween(this string value, int indexStart, int indexEnd)
+        public static string GetBetween(this string value, int startIndex, int endIndex)
         {
-            indexStart += 1;
-            return value.Substring(indexStart, indexEnd - indexStart);
+            return value.Substring(startIndex, endIndex - (startIndex + 1));
         }
 
         /// <summary>
