@@ -192,11 +192,11 @@ namespace UsefulExtensions
         }
 
         /// <summary>
-        /// Indicates if this string instance containes any number.
+        /// Indicates if this string instance containes any d.
         /// </summary>
         /// <param name="value">This string instance.</param>
         /// <returns></returns>
-        public static bool HasNumber(this string value)
+        public static bool ContainsDigits(this string value)
         {
             return !value.IsNullOrWhiteSpace() && value.Any(x => Char.IsDigit(x));
         }
